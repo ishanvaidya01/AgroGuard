@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AgroGuard – AI Crop Disease Detection</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:700,500,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <canvas id="particle-canvas"></canvas>
+  <div id="snackbar"></div>
+  <div id="page-transition-overlay"></div>
+
+  <!-- Hero Section -->
+  <section id="home-section">
+    <div class="hero glass fadein parallax-card">
+      <h1 class="typewriter"></h1>
+      <span class="subtitle">AI Crop Disease Detection</span>
+      <p class="hero-desc">Early disease alerts, smart treatment recommendations, instant insights.<br>Your farm’s future—safe, AI-powered.</p>
+      <div class="stats-box">
+        <div class="stat-card parallax-card">
+          <div class="stat-num" id="stat1"></div>
+          <div class="stat-label">Diseases Detected</div>
+        </div>
+        <div class="stat-card parallax-card">
+          <div class="stat-num" id="stat2"></div>
+          <div class="stat-label">Farmers Helped</div>
+        </div>
+        <div class="stat-card parallax-card">
+          <div class="stat-num" id="stat3"></div>
+          <div class="stat-label">Images Analysed</div>
+        </div>
+      </div>
+<!-- Generate & Logout Buttons -->
+<div class="action-buttons action-buttons-row">
+  <button class="cta-btn generate-btn" onclick="handleGenerate()">Find Disease</button>
+  <button class="cta-btn logout-btn" onclick="handleLogout()">Log Out</button>
+</div>
+
+
+    </div>
+
+    <div id="home-greeting"></div>
+
+    <!-- Success Stories Box (carousel, 4 at a time, "Still Counting..." on right) -->
+<div class="success-stories glass parallax-card">
+  <div class="success-header">
+    <h2>Success Stories</h2>
+    <span class="still-counting">Still Counting...</span>
+  </div>
+  <div class="stories-list" id="stories-list">
+    <!-- JS Will Populate 4 at a Time -->
+  </div>
+</div>
+  </section>
+
+  <!-- Login/Register Sections -->
+  <section id="login-section" class="hidden">
+    <div class="form-card glass parallax-card">
+      <h2>Login</h2>
+      <form onsubmit="handleLogin(event)">
+        <input type="email" id="login-email" placeholder="Email" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <button type="submit" class="cta-btn liquid">Sign In</button>
+      </form>
+      <div class="form-msg"></div>
+      <div class="link" onclick="showSection('register')">Don't have an account? Register</div>
+      
+    </div>
+  </section>
+
+  <section id="register-section" class="hidden">
+    <div class="form-card glass parallax-card">
+      <h2>Register</h2>
+      <form onsubmit="handleRegister(event)">
+        <input type="email" id="register-email" placeholder="Email" required>
+        <input type="password" id="register-password" placeholder="Password" required>
+        <button type="submit" class="cta-btn liquid">Create Account</button>
+      </form>
+      <div class="form-msg"></div>
+      <div class="link" onclick="showSection('login')">Already have an account? Login</div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section id="faq-section" class="hidden">
+    <div class="info-card glass parallax-card">
+      <h2>FAQ</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(0)">How does image diagnosis work?</div>
+          <div class="faq-answer">Upload a clear crop image and receive AI-based disease identification instantly.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(1)">Is AgroGuard free?</div>
+          <div class="faq-answer">AgroGuard provides free basic diagnosis and paid advanced recommendations.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(2)">Do I need to install an app?</div>
+          <div class="faq-answer">No app needed—just use the web portal from any device!</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    AgroGuard © 2025 — AI Crop Disease Detection Portal  
+      </footer>
+  <script src="script.js"></script>
+</body>
+</html>
